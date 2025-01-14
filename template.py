@@ -32,7 +32,7 @@ project_files_list = [
     "Dockerfile",
     "requirements.txt",
     "setup.py",
-    "research"
+    "research/trials.ipynb"
 
 ]
 
