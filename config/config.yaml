@@ -2,7 +2,11 @@ artifacts_dir_name: artifacts
 
 data_ingestion_config:
   root_dir_name: data_ingestion
-  data_set_url: https://github.com/sumitVSI/raw_dataset/raw/refs/heads/main/phising_data.zip
+  data_set_url: https://github.com/sumitVSI/raw_dataset/raw/refs/heads/main/phishing_url_data.zip
   local_data_path: raw_data
   unzip_data_path: ingested_data
   
+data_validation_config:
+  root_dir_name: data_validation
+  validate_data_path: validate_data
+  status_file_path: validate_status

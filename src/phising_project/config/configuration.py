@@ -7,7 +7,7 @@ class ConfigurationManager:
     def __init__(self,
                  config_file_path = CONFIG_FILE_PATH,
                  schema_file_path = SCHEMA_FILE_PATH,
-                 parameter_file_path = PRAMETER_FILE_PATH):
+                 parameter_file_path = PARAMETER_FILE_PATH):
         try:
             self.config = read_yaml_file(config_file_path)
             self.schema = read_yaml_file(schema_file_path)

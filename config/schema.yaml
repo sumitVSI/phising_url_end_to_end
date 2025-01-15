@@ -1,4 +1,7 @@
-COLUMNS:
+NON_FEATURE_COLUMN:
+  url: object
+
+FEATURE_COLUMNS:
   email_in_url: int64
   qty_dot_url: int64
   qty_hyphen_url: int64
@@ -96,6 +99,5 @@ COLUMNS:
   tld_present_params: int64
   qty_params: int64
   
-
 TARGET_COLUMN:
-  name: phishing
+  phishing: int64
