@@ -2,8 +2,6 @@ from phising_project.logging import logger
 from phising_project.config.configuration import ConfigurationManager
 from phising_project.components.data_ingestion import DataIngestion
 
-
-
 class DataIngestionTrainingPipeline:
         def __init__(self):
                 pass

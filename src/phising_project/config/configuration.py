@@ -1,6 +1,6 @@
 from phising_project.constants import *
 from phising_project.utils.common import *
-from phising_project.entity import DataIngestionConfiguration
+from phising_project.entity import DataIngestionConfiguration,DataValidationConfiguration
 
 class ConfigurationManager:
 
@@ -45,5 +45,30 @@ class ConfigurationManager:
 
             return data_ingestion_config
         
+        except Exception as e:
+            raise e
+        
+    def get_data_validation_configuration(self) -> DataValidationConfiguration:
+
+        try:
+            config = self.config.data_validation_config
+
+            data_validation_dir = Path(os.path.join(self.artficats_dir_name,config.root_dir_name))
+            create_directories([data_validation_dir])
+
+            validate_data_dir = Path(os.path.join(data_validation_dir,config.validate_data_path))
+            create_directories([validate_data_dir])
+
+            status_file_dir = Path(os.path.join(data_validation_dir,config.status_file_path))
+            create_directories([status_file_dir])
+
+            data_validation_config = DataValidationConfiguration(
+                root_dir_name = data_validation_dir,
+                validate_data_path = validate_data_dir,
+                status_file_path = status_file_dir
+            )
+            logger.info(f"Data validation configuration updated: {data_validation_config}")
+
+            return data_validation_config
         except Exception as e:
             raise e
